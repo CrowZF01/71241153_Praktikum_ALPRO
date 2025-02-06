@@ -1,8 +1,11 @@
-import math
 
-P = 200000000  
-A = 400000000  
-r = 0.10         
-t = math.log(A / P) / math.log(1 + r)
+p = 200
+a = 400 
+r = 0.1 
+t = 0  
 
-print(f"waktu yang diperlukan untuk mencapai 400 juta = {t:.2f} tahun.")
+while p < a:
+    p = p + (r * p)
+    t += 1
+
+print(t)
