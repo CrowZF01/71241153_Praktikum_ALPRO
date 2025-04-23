@@ -1,6 +1,6 @@
 def anagram(kata_1,kata_2):
-  kata_1 = kata_1.lower().replace(' ', '')
-  kata_2 = kata_2.lower().replace(' ', '')
+  kata_1 = kata_1.lower()
+  kata_2 = kata_2.lower()
 
   if len(kata_1) != len(kata_2):
     return 'tidak sama jumlah hurufnya'
