@@ -1,6 +1,5 @@
 import re
-
-def tampilkan_kata_unik(nama_file):
+def kata_unik(nama_file):
     with open(nama_file, 'r') as file:
         isi = file.read().lower()
         kata_bersih = re.sub(r'[^a-zA-Z\s]', '', isi)
@@ -14,4 +13,4 @@ def tampilkan_kata_unik(nama_file):
                 i += 1
         kata.reverse()
         print('Kata unik:', ', '.join(kata))
-tampilkan_kata_unik('kalimat.txt')
+kata_unik('kalimat.txt')
