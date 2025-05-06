@@ -6,7 +6,7 @@ with open ('kalimat.txt') as file:
     for i in kata:
         if i in kata_unik:
             kata_sama.append(i)
-print('Kata yang unik:', kata_sama)
+print('Kata yang unik:', ', '.join(kata_sama))
 
 
 #isi file kalimat.txt dibawah ini:
