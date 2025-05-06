@@ -1,13 +1,17 @@
-kata_unik = ['halo', 'topi', '!', 'makan', 'piring']
-kata_sama = []
-with open ('kalimat.txt') as file:
-    kalimat = file.read()
-    kata = kalimat.split()
-    for i in kata:
-        if i in kata_unik:
-            kata_sama.append(i)
-print('Kata yang unik:', ', '.join(kata_sama))
+import re
 
-
-#isi file kalimat.txt dibawah ini:
-#halo semuanya nama saya tono dengan ! topi biasa
+def tampilkan_kata_unik(nama_file):
+    with open(nama_file, 'r') as file:
+        isi = file.read().lower()
+        kata_bersih = re.sub(r'[^a-zA-Z\s]', '', isi)
+        kata = kata_bersih.split()
+        kata.reverse()
+        i = 0
+        while i < len(kata):
+            if kata.count(kata[i]) > 1:
+                kata.remove(kata[i])
+            else:
+                i += 1
+        kata.reverse()
+        print('Kata unik:', ', '.join(kata))
+tampilkan_kata_unik('kalimat.txt')
