@@ -1,14 +1,17 @@
-import re
 def kata_unik(nama_file):
-    with open(nama_file, 'r') as file:
+    with open(nama_file) as file:
         isi = file.read().lower()
-        kata_bersih = re.sub(r'[^a-zA-Z\s]', '', isi)
-        kata = kata_bersih.split()
-        i = 0
-        while i < len(kata):
-            if kata.count(kata[i]) > 1:
-                kata.remove(kata[i])
-            else:
-                i += 1
-        print('Kata unik:', ', '.join(kata))
+        data = isi.split()
+        hasil = []
+        for i in range(len(data)):
+            duplikat = False
+            for j in range(len(data)):
+                if i != j and data[i] == data[j]:
+                    duplikat = True
+                    break
+            if not duplikat and data[i] not in hasil:
+                hasil.append(data[i])
+        print('Kata unik:', ', '.join(hasil))
 kata_unik('kalimat.txt')
+
+
