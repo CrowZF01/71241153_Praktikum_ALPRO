@@ -1,0 +1,10 @@
+data = ['halo','hai']
+data2 = set(data)
+data3 = list(data2)
+data4 = set(data3)
+data5 = tuple(data4)
+print(data)   
+print(data2)
+print(data3)
+print(data4)
+print(data5)
