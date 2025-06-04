@@ -6,5 +6,4 @@ def genap_ganjil(n):
     else:
         return genap_ganjil(n - 2)
 angka = int(input("Masukkan bilangan bulat: "))
-hasil = genap_ganjil(angka)
-print(hasil)
+print(genap_ganjil(angka))
